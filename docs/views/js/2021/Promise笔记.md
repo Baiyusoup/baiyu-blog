@@ -10,9 +10,13 @@ author: 青菜白玉汤
 
 ### 术语
 `promise`   是一个包含then方法的对象或者函数
+
 `thenable`  是一个包含then方法和对象或者函数
+
 `value`     任意合法值
+
 `exception` throw语句抛出的值
+
 `reason`    一个只是promise为什么被rejected的值
 
 ### 状态
