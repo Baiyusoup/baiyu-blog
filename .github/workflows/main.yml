@@ -16,8 +16,12 @@ jobs:
         npm install
         npm run-script build
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: public
+      uses: AEnterprise/rsync-deploy@v1.0
+      env:
+        DEPLOY_KEY: ${{ secrets.SERVER_TOKEN }}
+        SERVER_PORT: "22"
+        ARGS: "-avz --delete"
+        FOLDER: "public"
+        SERVER_IP: ${{ secrets.REMOTE_HOST }}
+        USERNAME: ${{ secrets.REMOTE_USER }}
+        SERVER_DESTINATION: ${{ secrets.TARGET }}
