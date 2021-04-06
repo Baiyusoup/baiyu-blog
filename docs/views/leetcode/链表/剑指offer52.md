@@ -1,5 +1,5 @@
 ---
-title: 52. 两个链表的第一个公共节点
+title: 剑指 Offer 52. 两个链表的第一个公共节点
 date: 2021-04-04
 categories:
  - LeetCode
