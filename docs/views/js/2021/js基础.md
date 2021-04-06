@@ -293,7 +293,7 @@ inherit(SubType, SuperType)
 **引用计数**：对每个值都记录它被引用的次数，当引用次数为0的时候就可以回收了，缺点在于如果有两个变量相互引用，那么无法进行回收，造成内存泄漏。
 
 
-## 存储
+## 客户端存储
 
 ### sessionStorage
 
@@ -302,3 +302,16 @@ inherit(SubType, SuperType)
 ### indexDB
 
 ### Cookie
+cookie是与特定域绑定的，设置cookie后，它会与请求一起发送到创建它的域
+
+由以下参数构成
+1. 一个唯一标识cookie的名称，需要经过URL编码
+2. 值：存储在cookie里的字符串值，必须经过URL编码
+3. 域domain：
+4. 路径path：请求URL中包含了这个路径，才会把cookie发送到服务器
+5. 过期时间expires：
+6. 安全标志secure：设置之后，只有使用SSL安全连接的请求才会把cookie发送给服务器
+
+限制：
+1. 不能超过300个cookie
+不能存储大量的数据

@@ -4,7 +4,7 @@ bgImage: 'https://uploadstatic.mihoyo.com/contentweb/20210324/202103241558415192
 bgImageStyle: {
   height: '450px'
 }
-faceImage: '/head.png'
+faceImage: 'https://avatars.githubusercontent.com/u/46164757?s=60&v=4'
 heroImage: /hero_write.png
 heroImageStyle: {
   maxHeight: '200px',
