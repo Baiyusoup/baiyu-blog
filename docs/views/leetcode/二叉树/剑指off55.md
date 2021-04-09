@@ -28,6 +28,6 @@ var maxDepth = function(root) {
 };
 ```
 
-## 设计知识点
+## 涉及知识点
 1. 递归
 2. 二叉树
