@@ -2,7 +2,7 @@
 title: ES6总结
 date: 2021-04-07
 categories:
- - javascript
+ - JavaScript
 author: 青菜白玉汤
 tags:
  - ES6

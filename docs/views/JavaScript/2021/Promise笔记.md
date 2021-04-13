@@ -2,7 +2,7 @@
 title: Promise A+规范实现
 date: 2021-04-03
 categories:
- - 手撕代码
+ - JavaScript
 author: 青菜白玉汤
 ---
 ## 规范

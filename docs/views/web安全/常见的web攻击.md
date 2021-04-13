@@ -2,8 +2,10 @@
 title: 常见的web攻击
 date: 2021-04-12
 categories:
- - web安全
+ - 计算机网络
 author: 青菜白玉汤
+tags:
+ - 网络安全
 ---
 
 ## 1. xss跨站脚本攻击

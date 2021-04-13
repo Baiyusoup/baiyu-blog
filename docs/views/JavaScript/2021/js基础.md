@@ -2,7 +2,7 @@
 title: js基础
 date: 2021-04-01
 categories:
- - javascript
+ - JavaScript
 author: 青菜白玉汤
 ---
 

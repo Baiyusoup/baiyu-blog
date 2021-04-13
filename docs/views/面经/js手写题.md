@@ -2,8 +2,10 @@
 title: 工具库
 date: 2021-04-06
 categories:
- - 手撕代码
+ - JavaScript
 author: 青菜白玉汤
+tags:
+ - 函数编程
 ---
 
 ### 函数柯里化

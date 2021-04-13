@@ -2,8 +2,10 @@
 title: Typescript笔记
 date: 2021-03-30
 categories:
- - ts
+ - JavaScript
 author: 青菜白玉汤
+tags:
+ - ts
 ---
 
 ## Ts

@@ -4,7 +4,8 @@ date: 2021-04-04
 categories:
  - LeetCode
 author: 青菜白玉汤
-tag: 链表
+tags:
+ - 链表
 ---
 
 ## 题目
