@@ -1,4 +1,4 @@
 node_modules
 deploy.sh
 ts
-public
+./public
