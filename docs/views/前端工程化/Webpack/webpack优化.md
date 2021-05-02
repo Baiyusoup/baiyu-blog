@@ -8,9 +8,13 @@ tags:
  - webpack
 ---
 
-## 提高构建速度
+webpack的优化主要分为两个方面，一是提高构建速度，二是提高项目运行时的性能。
 
-### 文件的检索速度
+<!-- more -->
+
+## 一、提高构建速度
+
+### 1. 文件的检索速度
 使用include、exclude来减少检索范围
 
 配置resolve.alias或使用resolveLoader减少检索范围
@@ -24,7 +28,7 @@ module.exports = {
 }
 ```
 
-### HMR
+### 2. HMR
 在devServer时，css是会在js里面，修改css还是js都会引起js的重新加载，如果有几百个模块，当一个模块发生变化时，所有模块都会重新加载
 
 HRM：热模块替换，一个模块发生变化，只会重新打包这一个模块
@@ -64,10 +68,11 @@ module.exports = {
 ```
 
 
-### oneOf
+### 3. oneOf
 该配置的作用是Rules匹配时，只会使用第一个匹配规则的数组，因为每个不同类型的文件在进行loader转换时，都会遍历rules里面所有的loader，设置oneOf，我们就可以在它命中匹配规则后，就不需要再往后遍历了，直接停下来，这样可以提高构建的速度。
 
 比如说vue-cli里面，针对css的配置
+
 ```javascript
 module.exports = {
   module: {
@@ -97,16 +102,16 @@ module.exports = {
   }
 }
 ```
-### babel缓存
+### 4. babel缓存
 可以通过将loader的结果缓存起来，这样第二次构建时，对于没有发生变化的文件，就不需要进行打包，直接从缓存中拿来使用。
 
 - cache-loader 可以在loader转换非常耗时的文件类型前使用
 - babel-loader 开启options.cacheDirectory:true
 
 
-### 多进程打包
+### 5. 多进程打包
 
-### externals
+### 6. externals
 用来告诉webpack哪些第三方库不需要进行编译打包，而是使用CDN的方式
 ```javascript
 module.exports = {
@@ -119,7 +124,7 @@ module.exports = {
 ```
 然后在html文件那里使用`script`标签引入使用CDN的库，有时候需要注意它们的顺序。
 
-### dll
+### 7. dll
 动态连接库，重新写一份webpack配置用来打包那些不需要经常更新的第三方库，我们通过这份webpack配置进行打包，webpack就会自动帮我们对那些包打包成dll文件
 ```javascript
 module.exports = {
@@ -144,18 +149,25 @@ module.exports = {
 
 使用时
 ```javascript
-
+module.exports = {
+  plugins: [
+    new WebPack.DllReferencePlugin({
+      manifest: './dll/vue.manifest.json'
+    })
+  ]
+}
 ```
 
 在webpack5的时代，一般不需要做DLL了，因为webpack5对于缓存方面做得很好了，用不用相差不大。vue-cli4已经将DLL去掉了
 
-## 提高运行性能
+## 二、提高运行性能
 ### 1. 利用浏览器缓存
 对打包的文件使用hash、chunkhash还是contenthash
 
 - hash: webpack每次构建时都会生成的唯一hash值
 - chunkhash：如果打包来自同一个chunk，那么hash值就会一样
 - contenthash：根据文件内容生成的hash值
+
 
 ### 2. tree shaking
 使用tree shaking需要在production模式下，而且必须使用ES module。
@@ -214,13 +226,13 @@ import('./a.js').then((res) => {
 })
 ```
 ### 4. 懒加载/预加载
-##### 1. 懒加载
+##### 4.1 懒加载
 ```javascript
 import(/* webpackChunkName: 'aChunk' */'./a.js').then().catch()
 ```
 这种我们可以设置在页面上触发某些动作时再加载这个chunk文件，这个chunk叫aChunk。
 
-##### 2. 预加载
+##### 4.2 预加载
 ```javascript
 import(/* webpackChunkName: 'aChunk', webpackPrefetch: true */'./a.js').then().catch()
 ```

@@ -71,6 +71,9 @@ webpack5之前是通过cache-loader和dll技术进行缓存，而webpack5在这�
 
 ## 常见Plugin及其作用
 
+### html-webpack-plugin
+提供一个HTML5文件，创建script、link标签引入webpack打包生成的打包文件，也可以使用由我们自己提供的html文件
+
 ### DefinePlugin
 作用是创建一个在编译时可以配置的全局常量
 
