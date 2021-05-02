@@ -2,10 +2,8 @@
 title: diff算法原理
 date: 2020-04-05
 categories:
- - JavaScript
+ - Vue
 author: 青菜白玉汤
-tags:
- - vue
 ---
 
 ## 算法原理

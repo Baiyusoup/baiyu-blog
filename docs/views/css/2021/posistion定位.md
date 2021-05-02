@@ -6,8 +6,11 @@ categories:
 author: 青菜白玉汤
 ---
 
-## 概述
-`position`属性用于指定元素在文档中的位置，通过`left`、`right`、`top`、`bottom`这四个属性设置设置该元素的最终位置。
+::: tip
+`position`属性用于指定元素在文档中的位置，通过`left`、`right`、`top`、`bottom`这四个属性设置设置该元素的最终位置
+:::
+
+<!-- more -->
 
 ## 属性值
 position定位共有static、relative、absolute、fixed和sticky五个属性值，其中static是默认值
