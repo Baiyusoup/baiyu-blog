@@ -2,11 +2,7 @@ const themeConfig = require('./config/theme/')
 
 module.exports = {
   title: "青菜白玉汤",
-  description: `
-    while(再坚持1秒) {
-      成功值 += 1
-    }
-  `,
+  description: `青菜白玉汤 博客`,
   dest: 'public',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],

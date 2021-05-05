@@ -16,7 +16,7 @@ module.exports = {
   // 作者
   author: '青菜白玉汤',
   // 备案号
-  record: '青菜白玉汤',
+  record: '007',
   // 项目开始时间
   startYear: '2021',
   plugins: [
