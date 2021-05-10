@@ -41,9 +41,25 @@ position定位共有static、relative、absolute、fixed和sticky五个属性值
 :::
 设置该属性值时，它的表现为relative和fixed的混合，当元素未跨过指定阈值(left之类指定值)，为relative，而跨过指定阈值后，就变成fixed。
 
+
+
+
+
 ## 包含块
-可以简单理解包含块就是这个元素最近的祖先块元素的内容区
+可以简单理解包含块就是这个元素最近的祖先块元素的内容区。
 
-元素的width/height、padding、margin以及使用absolute或fixed定位为的元素的偏移量的百分比值都是根据元素的包含块进行计算的
+元素的width/height、padding、margin以及使用absolute或fixed定位为的元素的偏移量的百分比值都是根据元素的包含块进行计算的。height、top、bottom的百分比值是通过包含块的height值计算的，而width、left、right、padding、margin的百分比值是通过包含块的width值计算的
 
-height、top、bottom的百分比值是通过包含块的height值计算的，而width、left、right、padding、margin的百分比值是通过包含块的width值计算的
+### 确定包含块
+- 如果设为static、relative或sticky，包含块可能有它**最近的祖先块元素**的**内容区**的边缘组成。
+- 如果设为absolute，包含块就是由它最近的非static的祖先元素的**内边距区**的边缘组成
+- 如果设为fixed，在连续媒体的情况下包含块是**viewport**，在分页媒体下包含块就是**分页区域**
+
+:::tip
+absolute和fixed的另外一种情况
+:::
+包含块也可能是满足以下条件的最近父级元素的内边距区组成
+1. transform或perspective不为none
+2. will-change为transform后perspective，filter
+3. filter不为none
+4. contain的值为paint
