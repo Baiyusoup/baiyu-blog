@@ -112,6 +112,9 @@ p {
   }
 }
 ```
+#### 3.1 内置函数
+- str-index(string, substring) 返回字串在string中的位置，没有匹配到就返回null
+- 
 ### 4. @at-root
 取消嵌套，将@at-root的样式都放到最外层去
 ```css
