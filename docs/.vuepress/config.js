@@ -1,8 +1,8 @@
-const themeConfig = require('./config/theme/')
+const themeConfig = require('./themeConfig')
 
 module.exports = {
   title: "青菜白玉汤",
-  description: `青菜白玉汤 博客`,
+  description: '个人博客',
   base: '/baiyu/',
   dest: 'public',
   head: [
@@ -14,5 +14,9 @@ module.exports = {
   markdown: {
     lineNumbers: true
   },
-  plugins: ['@vuepress/medium-zoom', 'flowchart'] 
+  plugins: [
+    'flowchart',
+    '@vuepress-reco/vuepress-plugin-pagation',
+    'permalink-pinyin'
+  ] 
 }  
