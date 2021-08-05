@@ -20,3 +20,7 @@ function animationFunc(timestamp) {
 }
 window.requestAnimationFrame(animationFunc)
 ```
+
+当浏览器渲染线程被过度占用时这个API调用间隔会非常不稳定。raf和timeout/interval的区别，在于raf用的屏幕刷新率，就是说不会和屏幕的刷新错开导致白屏闪烁。timeout/interval则是event loop层面的问题了，换句话说raf既不是宏任务也不是微任务。动画进度是以时间作为基准的，不是按帧数计数。
+
+[参考一](https://www.cnblogs.com/libin-1/p/6099746.html)
