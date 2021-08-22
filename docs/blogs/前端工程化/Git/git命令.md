@@ -76,6 +76,13 @@ git rm --cached [file]
 git commit -a -m "xxxx" [file]
 ```
 
+### 合并
+合并操作一般有merge和rebase这两种命令。
+
+
+[link](https://www.cnblogs.com/cangqinglang/p/12419568.html)
+
+
 ### 查看提交日志  
 
 ```shell
@@ -121,7 +128,19 @@ git reset --soft
 
 ### 删除文件
 
-删除文件的操作是在工作区删除文件后，使用git add 和 git commit。这个删除操作也会产生一个版本。    
+删除文件的操作是在工作区删除文件后，使用git add 和 git commit。这个删除操作也会产生一个版本。
+
+从暂存区和工作区删除文件，如果说删除之前修改过并且已经放到暂存区，那么需要加上`-f`参数来强制删除。
+```shell
+git rm [file]
+
+git rm -f [file]
+```
+
+如果说只是从暂存区中删除，但仍然想要在工作区中保留，就是撤销add操作
+```shell
+git rm --cached [file]
+```
 
 ### 删除文件找回
 
@@ -175,7 +194,9 @@ git merge xxx
  解决冲突的步骤：
 
 1. 用vim进入到文件中，会看到冲突的地方
+
    ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200727211841165.png)
+
    可以看到，红框里的是当前分支提交的新内容，白框是要合并的分支提交的内容，这两个分支在同一个地方的内容不一样。
 2. 删除<<<HEAD、===== 和 >>>> dev，这些符号，然后根据你的决定修改这块冲突的地方，当然你也可以不修改，“ hii ” 和 “ ihi "都要。退出vim
 3. 使用命令git commit -a -m "xxx"，**注意这个命令后面不跟文件名**
@@ -211,7 +232,7 @@ git push origin master
 ### 获取远程仓库最新的内容
 
 ```shell
-git fetch orgin/url
+git fetch origin/url
 ```
 
 ### 跨团队开发  
